@@ -14,15 +14,15 @@ class CreateProdukTable extends Migration
     public function up()
     {
         Schema::create('produk', function (Blueprint $table) {
-            $table->bigIncrements('id_produk');
-            $table->string('nama_barang');
-            $table->string('warna');
-            $table->string('bahan');
+            $table->increments('id_produk', 11);
+            $table->string('nama_barang', 70);
+            $table->string('warna', 30);
+            $table->string('bahan', 30);
             $table->integer('harga');
             $table->integer('stok');
-            $table->string('keterangan');
-            $table->increments('id_kategori');
-            $table->integer('best_seller');
+            $table->text('keterangan');
+            $table->increments('id_kategori', 11);
+            $table->enum('best_seller', ['Yes', 'No']);
         });
     }
 

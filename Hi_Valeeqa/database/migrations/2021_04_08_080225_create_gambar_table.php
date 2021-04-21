@@ -14,8 +14,9 @@ class CreateGambarTable extends Migration
     public function up()
     {
         Schema::create('gambar', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id_produk', 11);
+            $table->increments('id_kategori', 11);
+            $table->string('lokasi_gambar', 50);
         });
     }
 

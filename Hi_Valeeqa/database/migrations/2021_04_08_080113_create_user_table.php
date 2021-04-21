@@ -14,8 +14,13 @@ class CreateUserTable extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->bigIncrements('id_user');
-            $table->timestamps();
+            $table->increments('id_user', 11);
+            $table->string('email', 50);
+            $table->string('pass', 50);
+            $table->enum('jk', ['Pria', 'Wanita']);
+            $table->text('alamat');
+            $table->string('no_wa', 12);
+            $table->enum('level', ['Admin', 'User']);
         });
     }
 
